@@ -1,0 +1,9 @@
+﻿data/raw/*
+data/processed/*
+data/validation/*
+src/models/models/*.pkl
+.env
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+wandb/run-*
