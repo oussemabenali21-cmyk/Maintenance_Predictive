@@ -1,9 +1,8 @@
-﻿data/raw/*
-data/processed/*
-data/validation/*
-src/models/models/*.pkl
-.env
-__pycache__/
-*.pyc
+﻿# On ignore tout ce qui touche aux données
+data/
+*.csv
+*.parquet
+*.log
+*.pkl
 .ipynb_checkpoints/
-wandb/run-*
+__pycache__/

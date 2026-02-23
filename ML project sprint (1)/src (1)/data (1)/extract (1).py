@@ -73,16 +73,17 @@ def extract_data(sensor_file_path, failure_file_path, output_dir='extracted_data
         raise
         
 if __name__ == "__main__":
-    # Chemins des fichiers (à ajuster selon votre environnement)
-    SENSOR_FILE = "predictive_maintenance_sensor_data.csv"
-    FAILURE_FILE = "predictive_maintanace_failure_log.csv"
+    # 1. On donne les chemins exacts vers tes fichiers de 27 Mo
+    SENSOR_FILE = "data/raw/predictive_maintenance_sensor_data (1).csv"
+    FAILURE_FILE = "data/raw/predictive_maintenance_failure_logs (1).csv"
     
-    # Exécution de la fonction d'extraction
-    sensor_df, failure_df = extract_data(SENSOR_FILE, FAILURE_FILE)
+    # 2. On définit où créer les fichiers Parquet pour le nettoyage
+    OUTPUT_DIR = "data/processed/extracted_data"
     
-    # Affichage des premières lignes pour vérification
-    print("\nAperçu des données capteurs:")
+    # 3. On lance l'extraction avec ces nouveaux paramètres
+    sensor_df, failure_df = extract_data(SENSOR_FILE, FAILURE_FILE, output_dir=OUTPUT_DIR)
+    
+    # 4. Vérification visuelle dans Jupyter
+    print("\n✅ Extraction réussie !")
+    print(f"Nombre de lignes capteurs : {len(sensor_df)}")
     print(sensor_df.head())
-    
-    print("\nAperçu des données de défaillance:")
-    print(failure_df.head())
